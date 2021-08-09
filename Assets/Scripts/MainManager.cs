@@ -38,6 +38,8 @@ public class MainManager : MonoBehaviour
             }
         }
 
+        MenuManager.Instance.LoadData();
+
         bestScoreText.text = string.Format("BEST SCORE : {0} : {1}", MenuManager.Instance.playerName, MenuManager.Instance.score);
 
     }
@@ -79,7 +81,7 @@ public class MainManager : MonoBehaviour
 
         if (m_Points > MenuManager.Instance.score)
         {
-            MenuManager.Instance.score = m_Points;
+            MenuManager.Instance._score = m_Points;
             MenuManager.Instance.SaveData();
         }
     }

@@ -10,6 +10,9 @@ public class MenuManager : MonoBehaviour
     public string playerName;
     public int score;
 
+    public string _playerName;
+    public int _score;
+
     private void Awake()
     {
         if (Instance != null)
@@ -24,8 +27,8 @@ public class MenuManager : MonoBehaviour
 
     public void SetNameScore(string name, int score)
     {
-        playerName = name;
-        this.score = score;
+        _playerName = name;
+        _score = score;
     }
 
     public void LoadScene(string name)
@@ -41,8 +44,8 @@ public class MenuManager : MonoBehaviour
     public void SaveData()
     {
         PlayerData data = new PlayerData();
-        data.playerName = playerName;
-        data.score = score;
+        data.playerName = _playerName;
+        data.score = _score;
 
         string json = JsonUtility.ToJson(data);
 
